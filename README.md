@@ -23,6 +23,7 @@ Strongly or weakly supervised learning of affordances (running pretrained model)
 To reproduce our results on the CAD 120 affordance dataset, follow these steps:
 
 1.Download our CAD 120 affordance dataset at http://doi.org/10.5281/zenodo.495570.
+1b. Download the models from https://drive.google.com/drive/folders/0B_UStGLO8ul3enBlQUdLcFFmQjA?usp=sharing and store them in deeplabv2_extension/exper/CAD/models/DESIRED_ARCHITECTURE 
 
 2.Follow the installation instructions for the second version of deeplab (but with our source code!), see https://bitbucket.org/aquariusjay/deeplab-public-ver2
 The only difference between our code and deeplabv2_extension on this page is the reading of matlab files as input, the installation procedure is the same.
@@ -42,6 +43,7 @@ Strongly supervised learning of affordances (training the model yourself)
 To reproduce our results on the CAD 120 affordance dataset, follow these steps:
 
 1.Download our CAD 120 affordance dataset at http://doi.org/10.5281/zenodo.495570.
+1b. Download the models from https://drive.google.com/drive/folders/0B_UStGLO8ul3enBlQUdLcFFmQjA?usp=sharing and store them in deeplabv2_extension/exper/CAD/models/DESIRED_ARCHITECTURE 
 
 2.Follow the installation instructions for the second version of deeplab (but with our source code!), see https://bitbucket.org/aquariusjay/deeplab-public-ver2
 The only difference between our code and deeplabv2_extension on this page is the reading of matlab files as input, the installation procedure is the same.
@@ -67,6 +69,7 @@ Weakly supervised learning of affordances
 To reproduce our results on the CAD 120 affordance dataset, follow these steps:
 
 1.Download our CAD 120 affordance dataset at http://doi.org/10.5281/zenodo.495570.
+1b. Download the models from https://drive.google.com/drive/folders/0B_UStGLO8ul3enBlQUdLcFFmQjA?usp=sharing and store them in deeplabv2_extension/exper/CAD/models/DESIRED_ARCHITECTURE 
 
 2.Follow the installation instructions for the second version of deeplab (but with our source code!), see https://bitbucket.org/aquariusjay/deeplab-public-ver2
 The only difference between our code and deeplabv2_extension on this page is the reading of matlab files as input, the installation procedure is the same.
