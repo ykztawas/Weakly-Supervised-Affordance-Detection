@@ -1,0 +1,16 @@
+train_net: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/config/resnet/train_release.prototxt"
+
+iter_size: 10
+lr_policy: "poly"
+power: 0.9
+base_lr: 2.5e-4
+
+average_loss: 20
+display: 20
+max_iter: 5000
+momentum: 0.9
+weight_decay: 0.0005
+
+snapshot: 1000
+snapshot_prefix: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/model/resnet/strong_object_train"
+solver_mode: GPU
