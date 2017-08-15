@@ -17,8 +17,8 @@ layer {
     mean_value: 122.675
   }
   image_data_param {
-    root_folder: "/media/data/affordance_for_sharing/dataset/CornellDataset/processed_data/objects_only_crops"
-    source: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/list/test_object_split.txt"
+    root_folder: ROOT_FOLDER_FOR_CAD
+    source: PATH_TO_IMAGE_LIST
     batch_size: 1
     label_type: NONE
 #    label_type: MATPIXEL
