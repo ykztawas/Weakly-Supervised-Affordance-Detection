@@ -12,13 +12,12 @@ Liang-Chieh Chen and George Papandreou and Iasonas Kokkinos and Kevin Murphy and
 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs.  
 arXiv:1606.00915 (2016)  
 
-Any bugs or questions, please email sawatzky AT iai DOT uni-bonn DOT de.  
+Any bugs or questions, please email sawatzky AT iai DOT uni-bonn DOT de or consult the more detailed Readme.txt.  
 
 ### Installation strongly supervised learning
 
-1. Download our CAD 120 affordance <a href="http://doi.org/10.5281/zenodo.495570">dataset</a>.  
-1b. Download the <a href="https://drive.google.com/drive/folders/0B_UStGLO8ul3enBlQUdLcFFmQjA?usp=sharing"models</a> and store them in deeplabv2_extension/exper/CAD/models/DESIRED_ARCHITECTURE  
-strong_object.caffemodel was trained in strongly supervised setup, weak_object.caffemodel was trained in weakly supervised setup on the object split of our CAD 120 affordance dataset.
+1. Download our CAD 120 affordance <a href="http://doi.org/10.5281/zenodo.495570">dataset</a> and the <a href="https://drive.google.com/drive/folders/0B_UStGLO8ul3enBlQUdLcFFmQjA?usp=sharing">models</a> and store them in deeplabv2_extension/exper/CAD/models/DESIRED_ARCHITECTURE    
+strong_object.caffemodel was trained in strongly supervised setup, weak_object.caffemodel was trained in weakly supervised setup on the object split of our CAD 120 affordance dataset. init.caffemodel is pretrained on imagenet for initialisation.
 
 2. To install our extension, follow the original deeplab <a href="https://bitbucket.org/aquariusjay/deeplab-public-ver2">installation instructions</a>
 
