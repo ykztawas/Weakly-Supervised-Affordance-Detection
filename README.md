@@ -1,6 +1,6 @@
 # Weakly-Supervised-Affordance-Detection
 
-##Weakly Supervised Affordance Detection Code
+## Weakly Supervised Affordance Detection Code
 % ------------------------------------------------------------------------------
 % If you use this code please cite:
 %
@@ -17,7 +17,7 @@
 % Any bugs or questions, please email sawatzky AT iai DOT uni-bonn DOT de.
 % ==============================================================================
 
-###Strongly or weakly supervised learning of affordances (running pretrained model)
+### Strongly or weakly supervised learning of affordances (running pretrained model)
 
 To reproduce our results on the CAD 120 affordance dataset, follow these steps:
 
@@ -36,7 +36,7 @@ In test_release.prototxt: Adjust root_folder and source (which refers to the tes
 
 5.Evaluate your results using getMeanIoU_release.m. Here, you have to specify the ground truth path, the path where the convnet output is stored (without postprocessing), the list of the test image ids, the path for the output and the id of the output (name of output is composed out of the id and 'test.txt'). The list should be the same as the source in the MatWrite layer in test_release.prototxt. The output is a .txt file, it contains 6 rows for each of the affordances 'openable', 'cuttable', 'pourable', 'containable', 'supportable', 'holdable' and the background (in this order).
 
-###Strongly supervised learning of affordances (training the model yourself)
+### Strongly supervised learning of affordances (training the model yourself)
 
 To reproduce our results on the CAD 120 affordance dataset, follow these steps:
 
@@ -61,7 +61,7 @@ In test_release.prototxt: Adjust root_folder and source (which refers to the tes
 
 6.Evaluate your results using getMeanIoU_release.m. Here, you have to specify the ground truth path, the path where the convnet output is stored (without postprocessing), the list of the test image ids, the path for the output and the id of the output (name of output is composed out of the id and 'test.txt'). The list should be the same as the source in the MatWrite layer in test_release.prototxt. The output is a .txt file, it contains 6 rows for each of the affordances 'openable', 'cuttable', 'pourable', 'containable', 'supportable', 'holdable' and the background (in this order).
 
-###Weakly supervised learning of affordances
+### Weakly supervised learning of affordances
 
 To reproduce our results on the CAD 120 affordance dataset, follow these steps:
 
