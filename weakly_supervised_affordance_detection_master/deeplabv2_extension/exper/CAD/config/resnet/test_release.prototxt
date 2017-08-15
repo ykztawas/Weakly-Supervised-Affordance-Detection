@@ -21815,8 +21815,8 @@ layer {
      phase: TEST
    }
    mat_write_param {
-    prefix: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/features/resnet/test_rebuttal/fc8/"
-    source: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/list/test_object_split_id.txt"
+    prefix: OUTPUT_FOLDER
+    source: PATH_TO_LIST_OF_OUTPUT_IDS
      strip: 0
      period: 1
    }
