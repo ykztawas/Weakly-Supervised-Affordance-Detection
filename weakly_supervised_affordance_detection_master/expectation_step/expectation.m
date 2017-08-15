@@ -6,9 +6,9 @@ gaussian_size=50;
     %enter your paths here
 %rgb images
     img_dir='/media/data/affordance_for_sharing/dataset/CornellDataset/processed_data/objects_only_crops/object_crop_images_321/';
-    %ground truth
+    %ground truth (only needed for initial keypoint generation)
     groundtruth_dir='/media/data/affordance_for_sharing/dataset/CornellDataset/processed_data/objects_only_crops/affordance_multilabel_segmentation_no_background_321/';
-%output dircetion
+%output diretion
     weak_groundtruth_dir='/media/data/affordance_for_sharing/dataset/CornellDataset/processed_data/objects_only_crops/multilabel_spatial_priors_iter3/';
 %input direction
     cnn_prediction_dir='/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/features/deepLab-SigmoidLayer/weak_expectation_rebuttal/fc8/';
