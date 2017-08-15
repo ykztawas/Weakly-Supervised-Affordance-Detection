@@ -15,8 +15,8 @@ layer {
   top: "label"
   top: "data_dim"
   image_data_param {
-    root_folder: "/media/data/affordance_for_sharing/dataset/CornellDataset/processed_data/objects_only_crops"
-    source: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/list/train_object_split_weak.txt"
+    root_folder: ROOT_FOLDER_FOR_CAD
+    source: PATH_TO_IMAGE_LIST
     batch_size: 1
 #    has_label: false
     label_type: NONE
