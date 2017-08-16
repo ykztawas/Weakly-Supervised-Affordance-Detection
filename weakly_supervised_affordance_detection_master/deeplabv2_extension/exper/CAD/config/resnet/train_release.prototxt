@@ -22,8 +22,8 @@ layer {
     scale_factors: 1.5
   }
   image_data_param {
-    root_folder: ROOT_FOLDER_FOR_CAD
-    source: PATH_TO_IMAGE_LIST
+    root_folder: YOUR_PATH_TO_CAD/CAD_release/
+    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/DESIRED_LIST
     batch_size: 1
     shuffle: true
     label_type: MATPIXEL
