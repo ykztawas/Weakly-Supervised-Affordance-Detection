@@ -24,7 +24,7 @@ layer {
   top: "data"
   top: "label"
   image_data_param {
-    root_folder: ROOT_FOLDER_FOR_CAD
+    root_folder: YOUR_PATH_TO_CAD/CAD_release/
     source: PATH_TO_IMAGE_LIST
     label_type: MATPIXEL
     batch_size: 3
