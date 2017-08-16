@@ -21816,7 +21816,7 @@ layer {
    }
    mat_write_param {
     prefix: OUTPUT_FOLDER
-    source: PATH_TO_LIST_OF_OUTPUT_IDS
+    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/DESIRED_IDS_LIST
      strip: 0
      period: 1
    }
