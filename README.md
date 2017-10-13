@@ -26,31 +26,31 @@ strong_object.caffemodel was trained in strongly supervised setup, weak_object.c
 
 3. For weakly supervised training, also install GrabCut according to the readme.txt in expectation_step/grabcut.
 
-### Strongly or weakly supervised learning of affordances (running pretrained model)
-
-To reproduce our results on the CAD 120 affordance dataset, follow these steps:
+### Inference
 
 1. Adjust the input and output paths in the test_release.prototxt file located in deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE.   
 
-2. Run the standard caffe test command to get the segmentation predictions for the test set. The predictions are stored as .mat files ending with blob_0.mat in the folder specified in test_release.protxt, MatWrite layer. 
+2. Run the standard caffe test command to get the segmentation predictions for the test set. The predictions are stored as .mat files ending with blob_0.mat in the folder specified in test_release.protxt, MatWrite layer. Width and height are flipped, as for original deeplab.
 
-3. Evaluate your results using getMeanIoU_release.m. First adjust the paths to your setting. The output is a .txt file, it contains 6 rows for each of the affordances 'openable', 'cuttable', 'pourable', 'containable', 'supportable', 'holdable' and the background (in this order).
+### Evaluation
 
-### Strongly supervised learning of affordances (training the model yourself)
+Evaluate your results using getMeanIoU_release.m. First adjust the paths to your setting. 
+
+The output is a .txt file, it contains 6 rows for each of the affordances 'openable', 'cuttable', 'pourable', 'containable', 'supportable', 'holdable' and the background (in this order).
+
+### Supervised training
 
 To reproduce our results on the CAD 120 affordance dataset, follow these steps:
 
-1. To train the model, adjust the paths in solver_reease.prototxt and train_release.prototxt located in deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE. 
-In solver_release.protxt: Adjust train_net:PATH_TO_TRAIN_RELEASE.PROTOTXT, snapshot_prefix:PREFIX_FOR_TRAINED_MODELS  
+1. To train the model, adjust the paths in solver_release.prototxt and train_release.prototxt located in deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE. 
+
+In solver_release.protxt: Adjust train_net:PATH_TO_TRAIN_RELEASE.PROTOTXT, snapshot_prefix:PREFIX_FOR_TRAINED_MODELS
+
 In train_release.protxt: Adjust input source in the ImageSegData layer.
 
-2. Train your model using the standard caffe command using init.caffemodel as initialisation.
+2. Train your model using the standard caffe train command using init.caffemodel as initialisation.
 
-3. For inference see 'Strongly or weakly supervised learning of affordances'
-
-### Weakly supervised learning of affordances
-
-To reproduce our results on the CAD 120 affordance dataset, follow these steps:
+### Weakly supervised training
 
 1. Adjust the paths in expectation_step/expectation.m  
 
@@ -59,14 +59,10 @@ Make sure the output folder in expectation_release.prototxt is the same as the i
 
 3. Produce the initial weak segmentations running expectation(1,9916,'gaussians') in matlab. 
 
-4. Train your model using the standard caffe command using inti.caffemodel for initialisation.
+4. Train your model on this segmentation with solver_release_weak.prototxt.
 
-5. Run the standard caffe test command to get the segmentation predictions for the train set (using expectation_release.prototxt).
+5. Run the inference on train set with expectation_release.prototxt. The output folder must be the same as the expectation.m input folder.
 
 6. apply the Grabcut step by running expectation(1,5310,'grabcut'). 
 
-7. Train your model using the standard caffe command using inti.caffemodel for initialisation.
-
-8. Run the standard caffe test command to get the segmentation predictions for the test set (using test_release.prototxt). 
-
-9. Evaluate your results using getMeanIoU_release.m. (FIrst adjust the paths) The output is a .txt file, it contains 6 rows for each of the affordances 'openable', 'cuttable', 'pourable', 'containable', 'supportable', 'holdable' and the background (in this order).
+7. Train your model on this segmentation with solver_release_weak.prototxt.
