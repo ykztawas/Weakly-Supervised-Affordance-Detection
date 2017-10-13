@@ -24,8 +24,8 @@ layer {
   top: "data"
   top: "label"
   image_data_param {
-    root_folder: "/media/data/affordance_for_sharing/dataset/CornellDataset/processed_data/objects_only_crops"
-    source: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/list/train_object_split_strong.txt"
+    root_folder: YOUR_PATH_TO_CAD/CAD_release/
+    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/DESIRED_LIST
     label_type: MATPIXEL
     batch_size: 3
     shuffle: true

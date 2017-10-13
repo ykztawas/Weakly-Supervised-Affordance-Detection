@@ -17,8 +17,8 @@ layer {
     mean_value: 122.675
   }
   image_data_param {
-    root_folder: "/media/data/affordance_for_sharing/dataset/CornellDataset/processed_data/objects_only_crops"
-    source: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/list/train_object_split_weak.txt"
+    root_folder: YOUR_PATH_TO_CAD/CAD_release/
+    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/DESIRED_LIST
     batch_size: 1
     label_type: NONE
 #    label_type: MATPIXEL
@@ -21815,8 +21815,8 @@ layer {
      phase: TEST
    }
    mat_write_param {
-    prefix: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/features/resnet/weak_expectation_rebuttal/fc8/"
-    source: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/list/train_object_split_id.txt"
+    prefix: OUTPUT_FOLDER
+    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/DESIRED_IDS_LIST
      strip: 0
      period: 1
    }
