@@ -24,7 +24,7 @@ strong_object.caffemodel was trained in strongly supervised setup, weak_object.c
 
 ### Installation weakly supervised learning
 
-3. For weakly supervised training, also install GrabCut according to the readme.txt in expectation_step/grabcut.
+For weakly supervised training, also install GrabCut according to the readme.txt in expectation_step/grabcut.
 
 ### Inference
 
@@ -42,10 +42,8 @@ The output is a .txt file, it contains 6 rows for each of the affordances 'opena
 
 To reproduce our results on the CAD 120 affordance dataset, follow these steps:
 
-1. To train the model, adjust the paths in solver_release.prototxt and train_release.prototxt located in deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE. 
-
+1. Adjust the paths in solver_release.prototxt and train_release.prototxt located in deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE. 
 In solver_release.protxt: Adjust train_net:PATH_TO_TRAIN_RELEASE.PROTOTXT, snapshot_prefix:PREFIX_FOR_TRAINED_MODELS
-
 In train_release.protxt: Adjust input source in the ImageSegData layer.
 
 2. Train your model using the standard caffe train command using init.caffemodel as initialisation.
@@ -63,6 +61,6 @@ Make sure the output folder in expectation_release.prototxt is the same as the i
 
 5. Run the inference on train set with expectation_release.prototxt. The output folder must be the same as the expectation.m input folder.
 
-6. apply the Grabcut step by running expectation(1,5310,'grabcut'). 
+6. Apply the Grabcut step by running expectation(1,5310,'grabcut'). 
 
 7. Train your model on this segmentation with solver_release_weak.prototxt.
