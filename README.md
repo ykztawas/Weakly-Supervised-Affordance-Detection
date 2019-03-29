@@ -26,15 +26,28 @@ strong_object.caffemodel was trained in strongly supervised setup, weak_object.c
 
 For weakly supervised training, also install GrabCut according to the readme.txt in expectation_step/grabcut.
 
+Create folders for the expectation step, i.e. the folder for the fuzzy convnet output during expectation step
+
+`mkdir YOUR_PATH_TO_CAD/CAD_release/Convnet_expectation`
+
+and the binarized expectation step results
+
+`mkdir YOUR_PATH_TO_CAD/CAD_release/weak_segmentation_mat`
 ### Inference
 
-1. Adjust the input and output paths in the test_release.prototxt file located in deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE.   
+1. Adjust the paths in the test_release.prototxt file located in deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE.   
 
-2. Run the standard caffe test command to get the segmentation predictions for the test set. The predictions are stored as .mat files ending with blob_0.mat in the folder specified in test_release.protxt, MatWrite layer. Width and height are flipped, as for original deeplab.
+2. Run the standard caffe test command to get the segmentation predictions for the test set. 
+
+YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin test --model=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/test_release.prototxt  --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/models/DESIRED_ARCHITECTURE    
+strong_object.caffemodel --iterations=4605
+
+Iterations is the number of test images.
+The predictions are stored as .mat files ending with blob_0.mat in the folder specified in test_release.protxt, MatWrite layer. Width and height are flipped, as for original deeplab.
 
 ### Evaluation
 
-Evaluate your results using getMeanIoU_release.m. First adjust the paths to your setting. 
+Call getMeanIoU_release.m in matlab. First adjust the paths to your setting. 
 
 ### Supervised training
 
