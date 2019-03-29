@@ -44,24 +44,10 @@ To reproduce our results on the CAD 120 affordance dataset, follow these steps:
 
 ### Weakly supervised training
 
-1. Adjust the paths in `expectation_step/expectation.m`  
-
-2. Adjust the paths in `solver_release_weak.protxt`, `train_release.protxt`, `expectation_release.prototxt`, `test_release.prototxt`.  
+1. Adjust the paths in `run_CAD_weakly_supervised.sh`, `expectation.m`, `solver_release_weak.protxt`, `train_release.protxt`, `expectation_release.prototxt`, `test_release.prototxt`.  
 Make sure the output folder in `expectation_release.prototxt` is the same as the input folder in `expectation.m`
 
-3. Produce the initial weak segmentations running `expectation('gaussians')` in matlab. 
-
-4. Train your model on initial segmentations.  
-```YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin train --solver=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/solver_release_weak.prototxt --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/model/DESIRED_ARCHITECTURE/init.caffemodel```
-
-5. Run the inference on train set.   
-```YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin test --model=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/test_release.prototxt  --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/models/DESIRED_ARCHITECTURE/MODEL_FROM_PREVIOUS_STEP.caffemodel --iterations=5310```
-
-6. Expectation step with GrabCut step by running `expectation('grabcut')` in matlab. 
-
-7. Train your model on GrabCut segmentation.   
-```YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin train --solver=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/solver_release_weak.prototxt --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/model/DESIRED_ARCHITECTURE/init.caffemodel```
-
+2. Run weakly supervised training `./run_CAD_weakly_supervised.sh` 
 
 If you find the code useful, please consider citing our paper using the following BibTeX entry.  
 
