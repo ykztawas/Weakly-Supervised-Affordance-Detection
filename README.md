@@ -57,7 +57,7 @@ Make sure the output folder in `expectation_release.prototxt` is the same as the
 5. Run the inference on train set.   
 ```YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin test --model=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/test_release.prototxt  --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/models/DESIRED_ARCHITECTURE/MODEL_FROM_PREVIOUS_STEP.caffemodel --iterations=5310```
 
-6. Apply the Grabcut step by running `expectation('grabcut')` in matlab. 
+6. Expectation step with GrabCut step by running `expectation('grabcut')` in matlab. 
 
 7. Train your model on GrabCut segmentation.   
 ```YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin train --solver=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/solver_release_weak.prototxt --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/model/DESIRED_ARCHITECTURE/init.caffemodel```
