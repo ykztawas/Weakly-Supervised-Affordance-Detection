@@ -1,51 +1,49 @@
-%clear all
-%close all
+clear all
+close all
+
+%your path to deeplab folder
+deeplab_path = YOUR_PATH_TO_DEEPLABV2_EXTENSION;
 
 %folder which contains convnet output
-feature_folder='/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/features/deepLab-SigmoidLayer/test/fc8/';
+prediction_folder = YOUR_PATH_TO_PREDICTIONS_FOLDER;
 
 %ground truth folder
-gt_folder='/media/data/affordance_for_sharing/dataset/CornellDataset/processed_data/objects_only_crops/affordance_multilabel_segmentation_no_background_321/';
+gt_folder = YOUR_PATH_TO_GROUND_TRUTH_FOLDER;
 
 %list of image ids to be tested
-fid=fopen('/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/list/test_id.txt');
-C = textscan(fid,'%s');
-
-%folder the result will be saved to
-res_folder='/media/data/affordance_for_sharing/dataset/scripts/expectation_step/meanIoU/';
-
-count=1;
-%evaluate for different binarization thresholds
-for sig_thres=0.5:0.1:0.5;
-    
-    raw_thres=log(sig_thres/(1-sig_thres));
-    
-    I_cum=zeros(7,1);
-    U_cum=zeros(7,1);
-    
-    for i=1:size(C{1},1)
-        x=C{1}(i);
-        d=x{1};
-        
-        gt=load(strcat(gt_folder,d,'_binary_multilabel.mat'));
-        
-        res=load(strcat(feature_folder,d,'_blob_0.mat'));
-        binarized_result=imresize(permute(res.data,[2 1 3]),[size(gt.data,1) size(gt.data, 2)]);
-        binarized_result=(binarized_result>raw_thres);
-        
-        [I, U]=getIandU_binary_multilabel(double(gt.data),double(binarized_result(:,:,1:6)));
-        I_cum=I_cum+I;
-        U_cum=U_cum+U;
-        
-    end
-    I_cum=double(I_cum);
-    U_cum=double(U_cum);
-    IoU(:,count)=I_cum./U_cum;
-    count=count+1;
-end
-
+fid = fopen(strcat(YOUR_PATH_TO_DEEPLABV2_EXTENSION, '/deeplabv2_extension/exper/CAD/lists/test_object_split_id.txt'));
+file_ids = textscan(fid, '%s');
 fclose(fid);
 
-dlmwrite(strcat(res_folder,'IoU.txt'),IoU);
+
+I_cum=zeros(7,1);
+U_cum=zeros(7,1);
+
+for f_idx = 1:size(file_ids{1}, 1)
+    file_id = file_ids{1}{f_idx};
+    
+    gt = load(strcat(gt_folder, '/', file_id, '_binary_multilabel.mat'));
+
+    res = load(strcat(prediction_folder, '/', file_id, '_blob_0.mat'));
+    binarized_result = imresize(permute(res.data, [2 1 3]), [size(gt.data, 1) size(gt.data, 2)]);
+    binarized_result = (binarized_result > 0);
+    
+    [I, U] = getIandU_binary_multilabel(double(gt.data), double(binarized_result(:,:,1:6)));
+
+    I_cum = I_cum + I;
+    U_cum = U_cum + U;
+    
+end
+I_cum = double(I_cum);
+U_cum = double(U_cum);
+IoU = I_cum ./ U_cum;
+
+fprintf('IoU for the affordances: \n')
+affordances = {'openable', 'cuttable', 'pourable', 'containable', 'supportable', 'holdable'};
+for aff_idx = 1:size(affordances, 2)
+    fprintf(strcat(affordances{aff_idx}, ':\t', num2str(IoU(aff_idx)), '\n'));
+end
+
+
 
 
