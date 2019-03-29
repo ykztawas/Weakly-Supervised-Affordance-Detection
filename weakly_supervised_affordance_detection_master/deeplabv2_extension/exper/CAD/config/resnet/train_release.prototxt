@@ -23,7 +23,13 @@ layer {
   }
   image_data_param {
     root_folder: YOUR_PATH_TO_CAD/CAD_release/
-    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/DESIRED_LIST
+    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/train_object_split_strong.txt
+#for actor split choose
+#    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/train_actor_split_strong.txt
+#for weak object split choose
+#    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/train_object_split_weak.txt
+#for weak actor split choose
+#    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/train_actor_split_weak.txt
     batch_size: 1
     shuffle: true
     label_type: MATPIXEL

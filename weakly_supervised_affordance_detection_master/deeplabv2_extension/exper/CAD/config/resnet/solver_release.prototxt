@@ -1,4 +1,4 @@
-train_net: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/config/resnet/train_release.prototxt"
+train_net: "YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/resnet/train_release.prototxt"
 
 iter_size: 10
 lr_policy: "poly"
@@ -12,5 +12,5 @@ momentum: 0.9
 weight_decay: 0.0005
 
 snapshot: 1000
-snapshot_prefix: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/model/resnet/strong_object_train"
+snapshot_prefix: "YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/model/resnet/strong_object_train"
 solver_mode: GPU

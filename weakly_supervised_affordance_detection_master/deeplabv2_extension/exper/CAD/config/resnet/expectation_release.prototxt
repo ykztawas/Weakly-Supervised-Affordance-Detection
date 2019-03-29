@@ -18,7 +18,9 @@ layer {
   }
   image_data_param {
     root_folder: YOUR_PATH_TO_CAD/CAD_release/
-    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/DESIRED_LIST
+    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/train_object_split_weak.txt
+#   for actor split choose
+#    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/train_actor_split_weak.txt
     batch_size: 1
     label_type: NONE
 #    label_type: MATPIXEL
@@ -21815,8 +21817,10 @@ layer {
      phase: TEST
    }
    mat_write_param {
-    prefix: OUTPUT_FOLDER
-    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/DESIRED_IDS_LIST
+    prefix: YOUR_PATH_TO_CAD/CAD_release/Convnet_expectation
+    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/train_object_split_id.txt
+#   for actor split choose
+#    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/train_actor_split_id.txt
      strip: 0
      period: 1
    }

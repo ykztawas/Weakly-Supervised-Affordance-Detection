@@ -16,7 +16,9 @@ layer {
   top: "data_dim"
   image_data_param {
     root_folder: YOUR_PATH_TO_CAD/CAD_release/
-    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/DESIRED_LIST
+    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/test_object_split.txt
+#for actor split
+#    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/test_actor_split.txt
     batch_size: 1
 #    has_label: false
     label_type: NONE
@@ -417,8 +419,10 @@ layer {
   type: "MatWrite"
   bottom: "fc8_interp"
   mat_write_param {
-    prefix: OUTPUT_FOLDER
-    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/DESIRED_IDS_LIST
+    prefix: YOUR_PATH_TO_TEST_SET_PREDICTIONS
+    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/test_object_split_id.txt
+#for actor split:
+#    source: YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/lists/test_actor_split_id.txt
     strip: 0
     period: 1
   }

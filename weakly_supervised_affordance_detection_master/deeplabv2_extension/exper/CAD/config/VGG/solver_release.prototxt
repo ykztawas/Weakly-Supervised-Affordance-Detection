@@ -1,5 +1,5 @@
 random_seed: 0
-train_net: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/config/deepLab-SigmoidLayer/train_release.prototxt"
+train_net: "YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/VGG/train_release.prototxt"
 
 lr_policy: "step"
 gamma: 0.1
@@ -12,7 +12,7 @@ momentum: 0.9
 weight_decay: 0.0005
 
 snapshot: 6000
-snapshot_prefix: "/home/sawatzky/libs/deeplabv2_IoU_layer/exper/CAD/model/deepLab-SigmoidLayer/strong_object_train"
+snapshot_prefix: "YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/model/VGG/strong_object_train"
 solver_mode: GPU
 
 
