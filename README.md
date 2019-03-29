@@ -69,9 +69,14 @@ Make sure the output folder in expectation_release.prototxt is the same as the i
 If you find the code useful, please consider citing our paper using the following BibTeX entry.  
 
 `@InProceedings{Sawatzky_Srikantha_2017_CVPR,  
+
 author = {Sawatzky, Johann and Srikantha, Abhilash and Gall, Juergen},  
+
 title = {Weakly Supervised Affordance Detection.},  
+
 booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},  
+
 month = {July},  
+
 year = {2017}  
 }`
