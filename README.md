@@ -3,14 +3,16 @@
 ## Weakly Supervised Affordance Detection Code
 If you use this code please cite:  
 
-```Johann Sawatzky, Abhilash Srikantha, Juergen Gall.  
+<cite>Johann Sawatzky, Abhilash Srikantha, Juergen Gall.  
 Weakly Supervised Affordance Detection.  
-IEEE Conference on Computer Vision and Pattern Recognition (CVPR'17)  
+IEEE Conference on Computer Vision and Pattern Recognition (CVPR'17)</cite>
 
+and
 
+<cite>
 Liang-Chieh Chen and George Papandreou and Iasonas Kokkinos and Kevin Murphy and Alan L Yuille.  
 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs.  
-arXiv:1606.00915 (2016)```  
+arXiv:1606.00915 (2016) </cite>
 
 Any bugs or questions, please email sawatzky AT iai DOT uni-bonn DOT de or consult the more detailed Readme.txt.  
 
