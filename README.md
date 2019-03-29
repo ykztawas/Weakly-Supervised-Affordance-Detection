@@ -1,24 +1,5 @@
 # Weakly-Supervised-Affordance-Detection
 
-## Weakly Supervised Affordance Detection Code
-If you use this code please cite:  
-
-```
-@InProceedings{Sawatzky_Srikantha_2017_CVPR,
-author = {Sawatzky, Johann and Srikantha, Abhilash and Gall, Juergen},
-title = {Weakly Supervised Affordance Detection.},
-booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-month = {July},
-year = {2017}
-}```
-
-and
-
-<cite>
-Liang-Chieh Chen and George Papandreou and Iasonas Kokkinos and Kevin Murphy and Alan L Yuille.  
-DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs.  
-arXiv:1606.00915 (2016) </cite>  
-
 Any bugs or questions, please email sawatzky AT iai DOT uni-bonn DOT de or consult the more detailed Readme.txt.  
 
 ### Installation strongly supervised learning
@@ -83,3 +64,14 @@ Make sure the output folder in expectation_release.prototxt is the same as the i
 
 7. Train your model on this segmentation with solver_release_weak.prototxt.   
 ```YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin train --solver=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/solver_release_weak.prototxt --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/model/DESIRED_ARCHITECTURE/init.caffemodel```
+
+
+If you find the code useful, please consider citing our paper using the following BibTeX entry.  
+
+`@InProceedings{Sawatzky_Srikantha_2017_CVPR,
+author = {Sawatzky, Johann and Srikantha, Abhilash and Gall, Juergen},
+title = {Weakly Supervised Affordance Detection.},
+booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {July},
+year = {2017}
+}`
