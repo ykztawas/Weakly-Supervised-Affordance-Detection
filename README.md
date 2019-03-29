@@ -37,9 +37,8 @@ and the binarized expectation step results
 
 1. Adjust the paths in the test_release.prototxt file located in deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE.   
 
-2. Run the standard caffe test command to get the segmentation predictions for the test set.   
-
-`YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin test --model=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/test_release.prototxt  --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/models/DESIRED_ARCHITECTURE strong_object.caffemodel --iterations=4605`  
+2. Run the standard caffe test command to get the segmentation predictions for the test set. 
+```YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin test --model=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/test_release.prototxt  --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/models/DESIRED_ARCHITECTURE strong_object.caffemodel --iterations=4605```
 
 Iterations is the number of test images.
 The predictions are stored as .mat files ending with blob_0.mat in the folder specified in test_release.protxt, MatWrite layer. Width and height are flipped, as for original deeplab.
@@ -55,7 +54,6 @@ To reproduce our results on the CAD 120 affordance dataset, follow these steps:
 1. Adjust the paths in solver_release.prototxt and train_release.prototxt located in deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE. 
 
 2. Train your model using the standard caffe train command using init.caffemodel as initialisation.
-
 ```YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin train --solver=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/solver_release.prototxt --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/model/DESIRED_ARCHITECTURE/init.caffemodel```
 
 ### Weakly supervised training
@@ -68,16 +66,13 @@ Make sure the output folder in expectation_release.prototxt is the same as the i
 
 3. Produce the initial weak segmentations running `expectation('gaussians')` in matlab. 
 
-4. Train your model on this segmentation with solver_release_weak.prototxt.
+4. Train your model on this segmentation with solver_release_weak.prototxt.  
+```YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin train --solver=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/solver_release_weak.prototxt --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/model/DESIRED_ARCHITECTURE/init.caffemodel```
 
-`YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin train --solver=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/solver_release_weak.prototxt --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/model/DESIRED_ARCHITECTURE/init.caffemodel`
-
-5. Run the inference on train set with expectation_release.prototxt. The output folder must be the same as the expectation.m input folder.
-
-`YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin test --model=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/test_release.prototxt  --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/models/DESIRED_ARCHITECTURE/MODEL_FROM_PREVIOUS_STEP.caffemodel --iterations=5310`
+5. Run the inference on train set with expectation_release.prototxt. The output folder must be the same as the expectation.m input folder.  
+```YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin test --model=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/test_release.prototxt  --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/models/DESIRED_ARCHITECTURE/MODEL_FROM_PREVIOUS_STEP.caffemodel --iterations=5310```
 
 6. Apply the Grabcut step by running `expectation('grabcut')` in matlab. 
 
-7. Train your model on this segmentation with solver_release_weak.prototxt. 
-
-`YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin train --solver=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/solver_release_weak.prototxt --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/model/DESIRED_ARCHITECTURE/init.caffemodel`
+7. Train your model on this segmentation with solver_release_weak.prototxt.   
+```YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/build/tools/caffe.bin train --solver=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/config/DESIRED_ARCHITECTURE/solver_release_weak.prototxt --gpu=0 --weights=YOUR_PATH_TO_DEEPLABV2_EXTENSION/deeplabv2_extension/exper/CAD/model/DESIRED_ARCHITECTURE/init.caffemodel```
