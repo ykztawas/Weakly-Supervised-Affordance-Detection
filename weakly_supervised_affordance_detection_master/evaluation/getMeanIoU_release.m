@@ -1,14 +1,11 @@
 clear all
 close all
 
-%your path to deeplab folder
-deeplab_path = YOUR_PATH_TO_DEEPLABV2_EXTENSION;
-
 %folder which contains convnet output
 prediction_folder = YOUR_PATH_TO_PREDICTIONS_FOLDER;
 
 %ground truth folder
-gt_folder = YOUR_PATH_TO_GROUND_TRUTH_FOLDER;
+gt_folder = 'YOUR_PATH_TO_CAD/CAD_release/segmentation_mat/';
 
 %list of image ids to be tested
 fid = fopen(strcat(YOUR_PATH_TO_DEEPLABV2_EXTENSION, '/deeplabv2_extension/exper/CAD/lists/test_object_split_id.txt'));
