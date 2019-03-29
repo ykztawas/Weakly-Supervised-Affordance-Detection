@@ -36,8 +36,6 @@ For weakly supervised training, also install GrabCut according to the readme.txt
 
 Evaluate your results using getMeanIoU_release.m. First adjust the paths to your setting. 
 
-The output is a .txt file, it contains 6 rows for each of the affordances 'openable', 'cuttable', 'pourable', 'containable', 'supportable', 'holdable' and the background (in this order).
-
 ### Supervised training
 
 To reproduce our results on the CAD 120 affordance dataset, follow these steps:
