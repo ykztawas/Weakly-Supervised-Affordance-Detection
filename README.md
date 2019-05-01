@@ -1,4 +1,6 @@
-# Weakly-Supervised-Affordance-Detection
+# Weakly Supervised Affordance Detection
+
+This is the official implementation of our CVPR 2017 [paper](https://pages.iai.uni-bonn.de/gall_juergen/download/jgall_affordancedetection_cvpr17.pdf)
 
 Any bugs or questions, please email sawatzky AT iai DOT uni-bonn DOT de or consult the more detailed Readme.txt.  
 
