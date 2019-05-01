@@ -1,6 +1,6 @@
 # Weakly Supervised Affordance Detection
 
-This is the official implementation of our CVPR 2017 [paper](https://pages.iai.uni-bonn.de/gall_juergen/download/jgall_affordancedetection_cvpr17.pdf). And if you like this paper, check out the extension [Adaptive Binarization for Weakly Supervised Affordance Segmentation](https://pages.iai.uni-bonn.de/gall_juergen/download/jgall_weakaffordance_acvr17.pdf) and another approach to [Learning Affordance Segmentation from Very Few Examples](https://pages.iai.uni-bonn.de/gall_juergen/download/jgall_affordance_gcpr18.pdf)
+This is the official implementation of our CVPR 2017 [paper](https://pages.iai.uni-bonn.de/gall_juergen/download/jgall_affordancedetection_cvpr17.pdf). And if you like this paper, check out the extension [Adaptive Binarization for Weakly Supervised Affordance Segmentation](https://pages.iai.uni-bonn.de/gall_juergen/download/jgall_weakaffordance_acvr17.pdf) and another approach to [Learning Affordance Segmentation from Very Few Examples](https://pages.iai.uni-bonn.de/gall_juergen/download/jgall_affordance_gcpr18.pdf).
 
 Any bugs or questions, please email sawatzky AT iai DOT uni-bonn DOT de or consult the more detailed Readme.txt.  
 
